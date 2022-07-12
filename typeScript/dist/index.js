@@ -1,40 +1,39 @@
-"use strict";
-class Person {
-    constructor(name, lastname, age) {
+export class Person {
+    constructor(name, lastname, _age) {
         this.name = name;
         this.lastname = lastname;
-        this.age = age;
+        this._age = _age;
     }
     fullName() {
-        console.log(`Person name is ${this.name} ${this.lastname} and age ${this.age}`);
+        return `${this.name} ${this.lastname}`;
     }
-    get getage() {
-        return this.age;
+    get age() {
+        return this._age;
     }
-    set setage(value) {
-        if (value === null)
+    set age(value) {
+        if (value === null || value === undefined)
             throw new Error("Please Enter a age value");
         else
-            this.age = value;
+            this._age = value;
     }
 }
 ;
-class Teacher extends Person {
+export class Teacher extends Person {
     constructor(name, lastname, age, title, jobcode) {
         super(name, lastname, age);
         this.title = title;
         this.jobcode = jobcode;
     }
     displayInfo() {
-        super.fullName();
+        console.log(super.fullName());
         console.log(`and title: ${this.title} and jobcode: ${this.jobcode}`);
     }
 }
 ;
-let newPerson = new Person("Yuksel", "Ertem");
-let newPerson2 = new Person("Görkem", "Aslan");
-let newTeacher = new Teacher("Selim Can", "Bagdatlı", 30, "chemist", 1234);
-newTeacher.displayInfo();
-newPerson2.setage = 27;
-newPerson2.fullName();
-newPerson.fullName();
+//let newPerson = new Person("Yuksel", "Ertem", 25)
+//let newPerson2 = new Person("Görkem", "Aslan", 27)
+//let newTeacher = new Teacher("Selim Can", "Bagdatlı", 30 , "chemist" , 1234)
+//newTeacher.displayInfo()
+//newPerson2.age = 27
+//console.log(`${newPerson2.fullName()} + age : ${newPerson.age}`)
+//console.log(`${newPerson.fullName()} + age : ${newPerson.age}`)

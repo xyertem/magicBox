@@ -1,43 +1,43 @@
-class Person  {
+export class Person  {
     
-    constructor(private name?:string, private lastname?:string, private age?:number){
+    constructor(private name?:string, private lastname?:string, private _age?:number|null){
     }
-    fullName ():void {
-        console.log(`Person name is ${this.name} ${this.lastname} and age ${this.age}`)
+    fullName ():string {
+        return `${this.name} ${this.lastname}`
     }
-    get getage(){
-        return this.age;
+    get age(){
+        return this._age
     }
-    set setage(value:number | null){
-        if(value === null)
-           throw new Error("Please Enter a age value");
+    set age(value:number | null | undefined){
+        if(value === null || value === undefined)
+           throw new Error("Please Enter a age value")
         else
-        this.age = value;
+        this._age = value;
     }
 };
-class Teacher extends Person {
+export class Teacher extends Person {
     
-    constructor(name?:string, lastname?:string, age?:number, private title?:string, private jobcode?:number){
-        super(name,lastname,age);
+    constructor(name:string, lastname:string, age?:number | null, private title?:string, private jobcode?:number){
+        super(name,lastname,age)
     }
     displayInfo () {
-        super.fullName();
-        console.log(`and title: ${this.title} and jobcode: ${this.jobcode}`);
+        console.log(super.fullName());
+        console.log(`and title: ${this.title} and jobcode: ${this.jobcode}`)
         
     }
 };
 
-let newPerson = new Person("Yuksel", "Ertem");
+//let newPerson = new Person("Yuksel", "Ertem", 25)
 
-let newPerson2 = new Person("Görkem", "Aslan");
+//let newPerson2 = new Person("Görkem", "Aslan", 27)
 
-let newTeacher = new Teacher("Selim Can", "Bagdatlı", 30 , "chemist" , 1234);
+//let newTeacher = new Teacher("Selim Can", "Bagdatlı", 30 , "chemist" , 1234)
 
-newTeacher.displayInfo();
+//newTeacher.displayInfo()
 
-newPerson2.setage = 27;
+//newPerson2.age = 27
 
 
-newPerson2.fullName();
+//console.log(`${newPerson2.fullName()} + age : ${newPerson.age}`)
+//console.log(`${newPerson.fullName()} + age : ${newPerson.age}`)
 
-newPerson.fullName();
