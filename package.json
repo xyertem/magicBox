@@ -1,0 +1,27 @@
+{
+  "name": "magicbox",
+  "version": "1.0.0",
+  "description": "typeScript learning path and examples",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyertem/magicBox.git"
+  },
+  "author": "Yüksel Ertem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xyertem/magicBox/issues"
+  },
+  "homepage": "https://github.com/xyertem/magicBox#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "set": "^1.1.1",
+    "set-default-browser": "^1.1.2"
+  }
+}

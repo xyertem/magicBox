@@ -22,12 +22,13 @@ class Teacher extends Person {
     }
     displayInfo () {
         super.fullName();
-        console.log(` and title: ${this.title} and jobcode: ${this.jobcode}`);
+        console.log(`and title: ${this.title} and jobcode: ${this.jobcode}`);
         
     }
 };
 
 let newPerson = new Person("Yuksel", "Ertem");
+
 let newPerson2 = new Person("Görkem", "Aslan");
 
 let newTeacher = new Teacher("Selim Can", "Bagdatlı", 30 , "chemist" , 1234);
@@ -38,4 +39,5 @@ newPerson2.setage = 27;
 
 
 newPerson2.fullName();
+
 newPerson.fullName();

@@ -25,5 +25,5 @@ const createPerson = <T>(p:Person<T>) => {
     }
 }
 
-const newPerson = createPerson({name:"Yuksel",lastname:"Ertem",age:27,info:123})
-console.log(newPerson);
+const nPerson = createPerson({name:"Yuksel",lastname:"Ertem",age:27,info:123})
+console.log(nPerson);

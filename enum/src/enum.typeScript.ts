@@ -1,5 +1,3 @@
-
-
 enum colorCode   {
     Black = 0,
     Brown = 1,

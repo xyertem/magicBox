@@ -27,7 +27,7 @@ class Teacher extends Person {
     }
     displayInfo() {
         super.fullName();
-        console.log(` and title: ${this.title} and jobcode: ${this.jobcode}`);
+        console.log(`and title: ${this.title} and jobcode: ${this.jobcode}`);
     }
 }
 ;
